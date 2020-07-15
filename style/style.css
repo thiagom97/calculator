@@ -10,7 +10,10 @@
     width: 480px;
     height: 100px;
     float: left;
-    margin: 10px
+    margin: 10px;
+    font-size: 70px;
+    text-align: right;
+    overflow: auto;
 }
 
 #plus, #minus, #times, #divide{
@@ -26,6 +29,8 @@
     border: 1px solid black;
     font-size: 25px;
     border-radius: 10px;
+    cursor: pointer;
+    color: black;
     
 }
 #_7, #_8, #_9, #_4, #_5, #_6, #_1, #_2, #_3{
@@ -40,6 +45,8 @@
     margin-top: 20px; 
     border: 1px solid black;
     font-size: 25px;
+    cursor: pointer;
+    color: black;
     
 }
 #_0, #dot, #del{
@@ -54,6 +61,8 @@
     margin-left: 18.25px;
     border: 1px solid black;
     font-size: 25px;
+    cursor: pointer;
+    color: black;
 }
 #clear, #result{
     background-color: rgb(105, 26, 26);
@@ -67,4 +76,6 @@
     margin-top: 20px; 
     border: 1px solid black;
     font-size: 25px;
+    cursor: pointer;
+    color: black;
 }
