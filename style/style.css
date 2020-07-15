@@ -1,13 +1,70 @@
 .container{
-    background-color: aqua;
+    background-color: rgb(60, 58, 78);
     width: 500px;
-    height: 800px;
-    
+    height: 570px;  
+    border-radius: 10px; 
+       
 }
 #display{
-    background-color: white;
+    background-color: rgb(213, 227, 227);
     width: 480px;
-    height: 75px;
+    height: 100px;
     float: left;
     margin: 10px
+}
+
+#plus, #minus, #times, #divide{
+    background-color: rgb(42, 44, 57);
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    margin-left: 18.25px;
+    margin-top: 10px;
+    text-align: center;
+    vertical-align: middle;
+    float: left;
+    border: 1px solid black;
+    font-size: 25px;
+    border-radius: 10px;
+    
+}
+#_7, #_8, #_9, #_4, #_5, #_6, #_1, #_2, #_3{
+    background-color: rgb(146, 153, 156);
+    width: 140px;
+    height: 50px;
+    line-height: 50px;
+    margin-left: 18.25px;
+    text-align: center;
+    vertical-align: middle;
+    float: left;
+    margin-top: 20px; 
+    border: 1px solid black;
+    font-size: 25px;
+    
+}
+#_0, #dot, #del{
+    background-color: rgb(146, 153, 156);
+    width: 140px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    float: left;
+    margin-top: 20px; 
+    margin-left: 18.25px;
+    border: 1px solid black;
+    font-size: 25px;
+}
+#clear, #result{
+    background-color: rgb(105, 26, 26);
+    width: 220px;
+    height: 50px;
+    line-height: 50px;
+    margin-right: 19px;
+    text-align: center;
+    vertical-align: middle;
+    float: right;
+    margin-top: 20px; 
+    border: 1px solid black;
+    font-size: 25px;
 }
