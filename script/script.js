@@ -1,7 +1,6 @@
 let operator;
 let calculator = {
-    num1: "",
-    num2: "",
+
 }
 let num1 = +calculator.num1;
 let num2 = +calculator.num2;
@@ -45,7 +44,7 @@ numberClick.forEach((button) => {
             document.getElementById("dot").disabled = true;
         } else if (dotIndex === -1) {
             document.getElementById("dot").disabled = false;
-        }
+        }       
         displayText.innerText += button.innerText;
 
     })
@@ -73,14 +72,12 @@ let operatorButton = document.querySelector(".operators");
 let operatorClick = operatorButton.querySelectorAll("button");
 operatorClick.forEach((button) => {
     button.addEventListener("click", function () {
-        if (calculator.num1 == undefined) {
-            calculator.num1 = displayText.innerText;
-            displayText.innerText = "";
-            operator = button.innerText;
-        } else if (calculator.num1 !== undefined) {
-            calculator.num2 = displayText.innerText;
-        }
-
+        calculator.num1 = displayText.innerText;
+        operator = button.innerText;
+        // if (typeof (calculator.num1) !== undefined) {
+        //  calculator.num2 = displayText.innerText;
+        //}
+        
     })
 })
 
