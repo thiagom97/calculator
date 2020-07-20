@@ -1,8 +1,10 @@
 .container{
     background-color: rgb(60, 58, 78);
     width: 500px;
-    height: 570px;  
+    height: 550px;  
     border-radius: 10px; 
+    overflow: hidden;
+    border: 1px solid rgb(0, 0, 0, 0.5);
        
 }
 #display{
@@ -10,7 +12,7 @@
     width: 500px;
     height: 100px;
     float: left;
-    margin-top: 10px;
+    margin-top: 5px;
     font-size: 70px;
     text-align: right;
     overflow: auto;
@@ -28,7 +30,7 @@
     text-align: center;
     vertical-align: middle;
     float: left;
-    border: 1px solid rgb(150, 150, 150);
+    border: 1px solid rgb(150, 150, 150, 0.75);
     font-size: 25px;
     border-radius: 10px;
     cursor: pointer;
@@ -76,7 +78,7 @@
     vertical-align: middle;
     float: right;
     margin-top: 20px; 
-    border: 1px solid rgb(148, 148, 148);
+    border: 1px solid rgb(148, 148, 148, 0.75);
     font-size: 25px;
     cursor: pointer;
     color: black;

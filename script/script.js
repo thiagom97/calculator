@@ -1,9 +1,15 @@
-let operator;
-let calculator = {
+/*TODO LIST
+Fix the dot
+String several operations together
+Fix the clear button
+Make it able to input a new number after the result*/
 
-}
-let num1 = +calculator.num1;
-let num2 = +calculator.num2;
+let calculator = [];
+
+let isa = false; //makes num2 more than one character long
+
+let num1 = +calculator[0];
+let num2 = +calculator[2];
 
 function add(num1, num2) {
     return num1 + num2;
@@ -44,8 +50,15 @@ numberClick.forEach((button) => {
             document.getElementById("dot").disabled = true;
         } else if (dotIndex === -1) {
             document.getElementById("dot").disabled = false;
-        }       
+        }
+
         displayText.innerText += button.innerText;
+
+        if (typeof (calculator[1]) !== "undefined" && !isa) {
+            displayText.innerText = "";
+            displayText.innerText += button.innerText;
+            isa = true;
+        }
 
     })
 })
@@ -62,9 +75,7 @@ let clear = document.getElementById("clear")
 clear.addEventListener("click", function () {
     let span = document.querySelector("span");
     span.innerText = "";
-    calculator.num1 = "";
-    calculator.num2 = "";
-    operator = "";
+    calculator = [];
 })
 
 //Operators
@@ -72,16 +83,24 @@ let operatorButton = document.querySelector(".operators");
 let operatorClick = operatorButton.querySelectorAll("button");
 operatorClick.forEach((button) => {
     button.addEventListener("click", function () {
-        calculator.num1 = displayText.innerText;
-        operator = button.innerText;
-        // if (typeof (calculator.num1) !== undefined) {
-        //  calculator.num2 = displayText.innerText;
-        //}
+        if (typeof (calculator[0]) !== "undefined") {
+            calculator[2] = displayText.innerText;
+        } 
+        if(typeof(calculator[0]) === "undefined" && typeof(calculator[1]) === "undefined"){
+            calculator[0] = displayText.innerText;
+            calculator[1] = button.innerText;
+        }
         
+        
+
+
     })
 })
 
 let result = document.querySelector("#result");
 result.addEventListener("click", function () {
-    displayText.innerText = `${operate(num1, operator, num2)}`
+    if (typeof (calculator[2]) === "undefined") {
+        calculator[2] = displayText.innerText;
+    }
+    displayText.innerText = `${Math.round((operate(+calculator[0], calculator[1], +calculator[2])+ Number.EPSILON) * 100) / 100}`
 })
