@@ -6,8 +6,6 @@ Make it able to input a new number after the result*/
 
 let calculator = [];
 
-let isa = false; //makes num2 more than one character long
-
 let num1 = +calculator[0];
 let num2 = +calculator[2];
 
@@ -39,6 +37,7 @@ function operate(num1, operator, num2) {
     }
 
 }
+let isa = false; //makes num2 more than one character long
 let displayText = document.querySelector("#displayText");
 let numbers = document.querySelector(".numbers");
 let numberClick = numbers.querySelectorAll("button");
@@ -53,7 +52,7 @@ numberClick.forEach((button) => {
         }
 
         displayText.innerText += button.innerText;
-
+        
         if (typeof (calculator[1]) !== "undefined" && !isa) {
             displayText.innerText = "";
             displayText.innerText += button.innerText;
@@ -73,8 +72,7 @@ del.addEventListener("click", function () {
 //Clear Display
 let clear = document.getElementById("clear")
 clear.addEventListener("click", function () {
-    let span = document.querySelector("span");
-    span.innerText = "";
+    displayText.innerText = "";
     calculator = [];
 })
 
@@ -83,15 +81,17 @@ let operatorButton = document.querySelector(".operators");
 let operatorClick = operatorButton.querySelectorAll("button");
 operatorClick.forEach((button) => {
     button.addEventListener("click", function () {
-        if (typeof (calculator[0]) !== "undefined") {
+        /*if (typeof (calculator[0]) !== "undefined") {
             calculator[2] = displayText.innerText;
-        } 
+        } */
         if(typeof(calculator[0]) === "undefined" && typeof(calculator[1]) === "undefined"){
             calculator[0] = displayText.innerText;
             calculator[1] = button.innerText;
+        } else{
+        calculator[2] = displayText.innerText;
+        displayText.innerText = `${Math.round((operate(+calculator[0], calculator[1], +calculator[2])+ Number.EPSILON) * 100) / 100}`
+        
         }
-        
-        
 
 
     })
@@ -102,5 +102,5 @@ result.addEventListener("click", function () {
     if (typeof (calculator[2]) === "undefined") {
         calculator[2] = displayText.innerText;
     }
-    displayText.innerText = `${Math.round((operate(+calculator[0], calculator[1], +calculator[2])+ Number.EPSILON) * 100) / 100}`
+    displayText.innerText = `${Math.round((operate(+calculator[0], calculator[1], +calculator[2])+ Number.EPSILON) * 100) / 100}`;
 })
